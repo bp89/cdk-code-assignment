@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+mainClassName = 'com.cdk.assignment.Main'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+jar {
+    baseName = "gs-gradle"
+    version = "0.1.0"
+}
