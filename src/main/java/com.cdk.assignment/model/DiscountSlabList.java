@@ -12,20 +12,8 @@ public class DiscountSlabList {
 
         return this.discountSlabs
                 .stream()
-                .mapToDouble(slab -> {
-                    if (amount > slab.getFrom()) {
-                        return calculatePercentage(amount - slab.getFrom(), slab.getDiscount());
-                    } else if (amount > slab.getFrom() && amount > slab.getTo()) {
-                        return calculatePercentage(slab.getTo() - slab.getFrom(), slab.getDiscount());
-                    } else {
-                        return 0;
-                    }
-                })
+                .mapToDouble(slab -> slab.calculateDiscount(amount))
                 .sum();
-
     }
 
-    public Double calculatePercentage(Double amount, Double percentage) {
-        return amount * percentage / 100;
-    }
 }

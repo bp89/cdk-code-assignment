@@ -2,6 +2,7 @@ package com.cdk.assignment;
 
 import com.cdk.assignment.model.DiscountSlab;
 import com.cdk.assignment.model.DiscountSlabList;
+import com.cdk.assignment.utils.DiscountUtil;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,12 +10,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        DiscountSlabList discountSlabList = getDiscountSlabList();
         System.out.println("Please enter purchase amount");
         Double purchaseAmount = in.nextDouble();
 
-        Double amountAfterDiscount = purchaseAmount - discountSlabList.calculateDiscountAmount(purchaseAmount);
-        System.out.println("The price after discount is: " + amountAfterDiscount);
+        System.out.println("The price after discount is: " + DiscountUtil.getAmountAfterDiscount(getDiscountSlabList(), purchaseAmount));
 
     }
 
