@@ -3,19 +3,18 @@ package com.cdk.assignment;
 import com.cdk.assignment.model.DiscountSlab;
 import com.cdk.assignment.model.DiscountSlabList;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
+        DiscountSlabList discountSlabList = getDiscountSlabList();
         System.out.println("Please enter purchase amount");
         Double purchaseAmount = in.nextDouble();
 
-        System.out.println("The price after discount is:" + 0); //TODO : replace with price after discount
+        Double amountAfterDiscount = purchaseAmount - discountSlabList.calculateDiscountAmount(purchaseAmount);
+        System.out.println("The price after discount is: " + amountAfterDiscount);
 
     }
 
@@ -43,7 +42,6 @@ public class Main {
                         )
                 )
                 .build();
-
 
 
     }
