@@ -19,7 +19,6 @@ public class DiscountSlab {
         } else if (amount > this.getFrom()) {
             discount = calculatePercentage(amount - this.getFrom(), this.getDiscount());
         }
-        System.out.println("-->"+ discount);
         return discount;
     }
 }
