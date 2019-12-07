@@ -8,7 +8,7 @@ public class DiscountUtil {
         return amount * percentage / 100;
     }
 
-    public static Double getAmountAfterDiscount(DiscountSlabList discountSlabList, Double purchaseAmount){
+    public static Double getAmountAfterDiscount(DiscountSlabList discountSlabList, Double purchaseAmount) {
         return purchaseAmount - discountSlabList.calculateDiscountAmount(purchaseAmount);
     }
 }
